@@ -67,8 +67,8 @@ static BitherApi *piApi;
             NSDictionary *dict = [completedOperation responseJSON];
             int latestHeight = [[dict objectForKey:@"height"] intValue];
             int height = 0;
-            if (latestHeight % 2016 !=0){
-                height = latestHeight - (latestHeight%2016);
+            if (latestHeight % 1008 !=0){
+                height = latestHeight - (latestHeight%1008);
             }else {
                 height = latestHeight;
             }
@@ -102,8 +102,8 @@ static BitherApi *piApi;
             }
             int latestHeight = [[data objectForKey:@"height"] intValue];
             int height = 0;
-            if (latestHeight % 2016 !=0){
-                height = latestHeight - (latestHeight%2016);
+            if (latestHeight % 1008 !=0){
+                height = latestHeight - (latestHeight%1008);
             }else {
                 height = latestHeight;
             }

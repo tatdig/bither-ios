@@ -72,6 +72,7 @@ static BlockUtil *blockUtil;
     uint32_t nonce = [dict getIntFromDict:NONCE];
     int blockNo = [dict getIntFromDict:BLOCK_NO];
     BTBlock *block = [[BTBlock alloc] initWithVersion:ver prevBlock:pevBlock merkleRoot:mrklRoot timestamp:time target:bits nonce:nonce height:blockNo];
+    NSLog(@"formatBlcok");
     return block;
 
 }
@@ -87,6 +88,7 @@ static BlockUtil *blockUtil;
     uint32_t nonce = [dict getIntFromDict:NONCE];
     int blockNo = [dict getIntFromDict:HEIGHT];
     BTBlock *block = [[BTBlock alloc] initWithVersion:ver prevBlock:pevBlock merkleRoot:mrklRoot timestamp:time target:bits nonce:nonce height:blockNo];
+    NSLog(@"formatBlcokChainBlock");
     return block;
 }
 
@@ -101,6 +103,7 @@ static BlockUtil *blockUtil;
     uint32_t nonce = [dict getIntFromDict:NONCE];
     int blockNo = [dict getIntFromDict:HEIGHT];
     BTBlock *block = [[BTBlock alloc] initWithVersion:ver prevBlock:pevBlock merkleRoot:mrklRoot timestamp:time target:bits nonce:nonce height:blockNo];
+    NSLog(@"formatBtcComBlock");
     return block;
 }
 
@@ -132,7 +135,7 @@ static BlockUtil *blockUtil;
         [[BitherApi instance] getSpvBlock:^(NSDictionary *dict) {
             self.isDowloadingSpv = NO;
             BTBlock *block = [BlockUtil formatBlcok:dict];
-            if (block.blockNo % 2016 != 0) {
+            if (block.blockNo % 1008 != 0) {
                 if ([self.delegate respondsToSelector:@selector(error)]) {
                     [self.delegate error];
                 }
@@ -147,7 +150,7 @@ static BlockUtil *blockUtil;
             [[BitherApi instance] getSpvBlockByBtcCom:^(NSDictionary *dict) {
                 self.isDowloadingSpv = NO;
                 BTBlock *block = [BlockUtil formatBtcComBlock:dict];
-                if (block.blockNo % 2016 != 0) {
+                if (block.blockNo % 1008 != 0) {
                     if ([self.delegate respondsToSelector:@selector(error)]) {
                         [self.delegate error];
                     }
@@ -162,7 +165,7 @@ static BlockUtil *blockUtil;
                 [[BitherApi instance] getSpvBlockByBlockChain:^(NSDictionary *dict) {
                     self.isDowloadingSpv = NO;
                     BTBlock *block = [BlockUtil formatBlcokChainBlock:dict];
-                    if (block.blockNo % 2016 != 0) {
+                    if (block.blockNo % 1008 != 0) {
                         if ([self.delegate respondsToSelector:@selector(error)]) {
                             [self.delegate error];
                         }
