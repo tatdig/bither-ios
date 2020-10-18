@@ -81,6 +81,7 @@
     self.dict = [[NSMutableDictionary alloc] init];
     [self.view bringSubviewToFront:self.addAddressBtn];
     ApplicationDelegate.coldController = self;
+    
 }
 
 #pragma mark - TabBar delegate

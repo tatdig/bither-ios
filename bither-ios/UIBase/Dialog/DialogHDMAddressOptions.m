@@ -57,7 +57,7 @@
 }
 
 - (void)showOnBlockchair {
-    NSString *url = [NSString stringWithFormat:@"https://blockchair.com/bitcoin/address/%@?from=bither", self.address.address];
+    NSString *url = [NSString stringWithFormat:@"https://www.tdcoincore.org/bcexplorer/address/%@?from=ios_wallet", self.address.address];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 

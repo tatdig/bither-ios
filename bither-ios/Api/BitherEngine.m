@@ -35,11 +35,11 @@ static MKNetworkEngine *bitherAndBtcComEngine;
             bitherEngine = [[self alloc] init];
             NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
             [headerFields setValue:@"application/json" forKey:@"Accept"];
-            userNetworkEngine = [[MKNetworkEngine alloc] initWithHostName:@"bu.getcai.com" customHeaderFields:headerFields];
-            statsNetworkEngine = [[MKNetworkEngine alloc] initWithHostName:@"bs.getcai.com" customHeaderFields:headerFields];
+            userNetworkEngine = [[MKNetworkEngine alloc] initWithHostName:@"www.tdcoincore.org" customHeaderFields:headerFields];
+            statsNetworkEngine = [[MKNetworkEngine alloc] initWithHostName:@"www.tdcoincore.org" customHeaderFields:headerFields];
             bitcoinNetworkEngine = [[MKNetworkEngine alloc] initWithHostName:@"b.getcai.com" customHeaderFields:headerFields];
             bcNetworkEngine = [[MKNetworkEngine alloc]
-                initWithHostName:@"bc1.bithernet.com" customHeaderFields:headerFields];
+                initWithHostName:@"www.tdcoincore.org" customHeaderFields:headerFields];
             hdmNetworkEngine = [[MKNetworkEngine alloc] initWithHostName:@"hdm.bither.net" customHeaderFields:headerFields];
             blockChainEngine = [[MKNetworkEngine alloc]
                 initWithHostName:@"blockchain.info" customHeaderFields:headerFields];
@@ -100,8 +100,8 @@ static MKNetworkEngine *bitherAndBtcComEngine;
     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
     [headerFields setValue:@"application/json" forKey:@"Accept"];
     if ([current.readonlyHostName isEqualToString:@"chain.api.btc.com"]) {
-        next = [[MKNetworkEngine alloc] initWithHostName:@"bc1.bithernet.com" customHeaderFields:headerFields];
-    } else if ([current.readonlyHostName isEqualToString:@"bc1.bithernet.com"]) {
+        next = [[MKNetworkEngine alloc] initWithHostName:@"www.tdcoincore.org" customHeaderFields:headerFields];
+    } else if ([current.readonlyHostName isEqualToString:@"www.tdcoincore.org"]) {
         next = [[MKNetworkEngine alloc] initWithHostName:@"bc2.bithernet.com" customHeaderFields:headerFields];
     } else if ([current.readonlyHostName isEqualToString:@"bc2.bithernet.com"]) {
         next = [[MKNetworkEngine alloc] initWithHostName:@"bc3.bithernet.com" customHeaderFields:headerFields];
@@ -117,7 +117,7 @@ static MKNetworkEngine *bitherAndBtcComEngine;
     MKNetworkEngine *next;
     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
     [headerFields setValue:@"application/json" forKey:@"Accept"];
-    if ([current.readonlyHostName isEqualToString:@"bc1.bithernet.com"]) {
+    if ([current.readonlyHostName isEqualToString:@"www.tdcoincore.org"]) {
         next = [[MKNetworkEngine alloc] initWithHostName:@"bc2.bithernet.com" customHeaderFields:headerFields];
     } else if ([current.readonlyHostName isEqualToString:@"bc2.bithernet.com"]) {
         next = [[MKNetworkEngine alloc] initWithHostName:@"bc3.bithernet.com" customHeaderFields:headerFields];
@@ -142,7 +142,7 @@ static MKNetworkEngine *bitherAndBtcComEngine;
     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
     [headerFields setValue:@"application/json" forKey:@"Accept"];
     if ([current.readonlyHostName isEqualToString:@"api.blockchair.com"]) {
-        next = [[MKNetworkEngine alloc] initWithHostName:@"bc1.bithernet.com/blockchair" customHeaderFields:headerFields];
+        next = [[MKNetworkEngine alloc] initWithHostName:@"www.tdcoincore.org/blockchair" customHeaderFields:headerFields];
     } else {
         next = [[MKNetworkEngine alloc] initWithHostName:@"api.blockchair.com" customHeaderFields:headerFields];
     }

@@ -65,6 +65,21 @@ typedef enum {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotifications) name:BTPeerManagerLastBlockChangedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotifications) name:BitherMarketUpdateNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:BTAddressManagerIsReady object:nil];
+    
+    NSMutableArray *imgListArray=[NSMutableArray array];
+    for (int i=0; i<=10; i++)
+
+    {
+        NSString *strImageName=[NSString stringWithFormat:@"no_address_ani_%d", i];
+        NSLog(@"%@",strImageName);
+        UIImage *image=[UIImage imageNamed:strImageName];
+        [imgListArray addObject:image];
+    }
+
+    self.ivNoAddress.animationImages = imgListArray;
+    self.ivNoAddress.animationDuration =1.0f;
+    //[self.ivNoAddress startAnimating];
+    //self.ivNoAddress
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -86,6 +101,9 @@ typedef enum {
     }
     [self.tableView reloadData];
     self.ivNoAddress.hidden = !(_privateKeys.count == 0 && _watchOnlys.count == 0 && _hdms.count == 0 && ![BTAddressManager instance].hasHDAccountHot && ![BTAddressManager instance].hasHDAccountMonitored);
+    if(!self.ivNoAddress.isHidden){
+        [self.ivNoAddress startAnimating];
+    }
 }
 
 - (void)receivedNotifications {

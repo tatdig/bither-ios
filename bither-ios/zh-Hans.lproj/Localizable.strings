@@ -381,14 +381,14 @@
 "Advance Options"="高级选项";
 
 "Send failed. Sending coins this few will be igored."="发送失败. 这样小额的交易会被忽略.";
-"%@ BTC to be confirmed."="%@ BTC 正在等待确认.";
+"%@ TDC to be confirmed."="%@ TDC 正在等待确认.";
 "Send failed. You don\'t have enough coins available for transaction fee."="发送失败. 可用余额不足以支付手续费.";
 "Send failed. You don\'t have enough coins available."="发送失败. 可用余额不足.";
-"Send failed. Lack of %@ BTC."="发送失败. 可用余额中缺少 %@ BTC. ";
+"Send failed. Lack of %@ TDC."="发送失败. 可用余额中缺少 %@ TDC. ";
 "Send failed. Transaction size is to large."="发送失败. 交易大小过大.";
 "Please wait for another confirmation."="请等待一个新的确认后再交易.";
 
-"Total BTC prefix"="总计: ";
+"Total TDC prefix"="总计: ";
 
 
 "Reload Transactions data"="重载交易数据";
@@ -514,7 +514,7 @@
 
 // Blockmeta
 "address_option_view_on_btc" = "在btc.com上查看";
-"address_option_view_on_blockchair" = "在blockchair.com上查看";
+"address_option_view_on_blockchair" = "在tdcoincore.org上查看";
 
 // Network Monitor Options
 "network_monitor_clear_peers" = "清空节点";
@@ -801,7 +801,7 @@
 "address_type_switch_hd_account_cold_no_segwit_pub_tips" = "如果您的冷HD账户需要使用隔离验证地址需要将您的冷钱包升级到v1.8.3重新监控";
 
 "cold_no_support_bc1_segwit_address" = "冷钱包暂不支持发往bc开头的隔离验证地址";
-"tip_sync_address_tx" = "%@\n正在同步该地址交易数据\n数据来自Blockchair.com";
+"tip_sync_address_tx" = "%@\n正在同步该地址交易数据\n数据来自tdcoincore.org";
 "tip_no_peers_connected_scan" = "正在搜索可连接的节点";
 "tip_sync_block_height" = "本地块高度落后于区块最新高度 %@ 个块，正在同步";
 "tip_network_error" = "网络已断开，请检查网络设置";

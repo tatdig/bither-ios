@@ -96,7 +96,7 @@
     topLabel.font = [UIFont systemFontOfSize:kTopLabelFontSize];
     topLabel.textColor = [UIColor whiteColor];
     topLabel.textAlignment = NSTextAlignmentCenter;
-    topLabel.text = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"Total BTC prefix", nil), [UnitUtil stringForAmount:total]];
+    topLabel.text = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"Total TDC prefix", nil), [UnitUtil stringForAmount:total]];
     [self addSubview:topLabel];
 
     CGFloat left = (self.frame.size.width - chartSize) / 2;

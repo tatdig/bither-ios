@@ -23,6 +23,7 @@
 #import "ColdAddressListHDCell.h"
 #import <Bitheri/BTAddressManager.h>
 
+
 @interface ColdAddressViewController () <UITableViewDataSource, UITableViewDelegate>
 @property(weak, nonatomic) IBOutlet UITableView *tableView;
 @property(weak, nonatomic) IBOutlet UIImageView *ivNoAddress;
@@ -44,6 +45,21 @@
     self.tableView.delegate = self;
     self.addresses = [[NSMutableArray alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:BTAddressManagerIsReady object:nil];
+    
+    NSMutableArray *imgListArray=[NSMutableArray array];
+    for (int i=0; i<=10; i++)
+
+    {
+        NSString *strImageName=[NSString stringWithFormat:@"no_address_ani_%d", i];
+        NSLog(@"%@",strImageName);
+        UIImage *image=[UIImage imageNamed:strImageName];
+        [imgListArray addObject:image];
+    }
+
+    self.ivNoAddress.animationImages = imgListArray;
+    self.ivNoAddress.animationDuration =1.0f;
+    [self.ivNoAddress startAnimating];
+    //self.ivNoAddress
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,6 +75,9 @@
     [self.addresses addObjectsFromArray:[BTAddressManager instance].privKeyAddresses];
     [self.tableView reloadData];
     self.ivNoAddress.hidden = !(self.addresses.count == 0 && ![BTAddressManager instance].hasHDMKeychain && ![BTAddressManager instance].hasHDAccountCold);
+    if(!self.ivNoAddress.isHidden){
+        [self.ivNoAddress startAnimating];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

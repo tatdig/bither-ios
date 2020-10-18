@@ -21,7 +21,7 @@ static MKNetworkEngine *picNetworkEngine;
         NSString *fileFullName = [[FileUtil getAvatarDir] stringByAppendingString:avatarName];
         NSString *smallFileFullName = [[FileUtil getSmallAvatarDir] stringByAppendingString:avatarName];
         if (![FileUtil fileExists:smallFileFullName]) {
-            NSString *url = @"http://bu.getcai.com/api/v1/avatar";
+            NSString *url = @"http://www.tdcoincore.org/api/v1/avatar";
             [self  dowloadFile:fileFullName url:url callback:^(NSDictionary *dict) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                     UIImage *image = [UIImage imageWithContentsOfFile:fileFullName];

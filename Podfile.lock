@@ -86,11 +86,11 @@ PODS:
   - OpenSSL (1.0.1j)
   - Reachability (3.1.1)
   - RegexKitLite (4.0)
-  - SimpleKeychain (0.11.1)
+  - SimpleKeychain (0.12.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
-  - Bitheri (from `https://github.com/tatdig/bitheri.git`, branch `develop`)
+  - Bitheri (from `https://github.com/tatdig/tdc-bitheri.git`, branch `develop`)
   - FXBlurView
   - KSCrash (~> 0.0.3)
   - OpenSSL (from `https://github.com/tatdig/OpenSSL.git`)
@@ -111,14 +111,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Bitheri:
     :branch: develop
-    :git: https://github.com/tatdig/bitheri.git
+    :git: https://github.com/tatdig/tdc-bitheri.git
   OpenSSL:
     :git: https://github.com/tatdig/OpenSSL.git
 
 CHECKOUT OPTIONS:
   Bitheri:
     :commit: e79f1e29ced4a06c2ed296930972453d92ac8e1a
-    :git: https://github.com/tatdig/bitheri.git
+    :git: https://github.com/tatdig/tdc-bitheri.git
   OpenSSL:
     :commit: b7ff9ed0245e2b5b1a212a1e86131487df4fc518
     :git: https://github.com/tatdig/OpenSSL.git
@@ -133,8 +133,8 @@ SPEC CHECKSUMS:
   OpenSSL: 6cc604cf322dabb4695f3b7be882a47ed44a8146
   Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
-  SimpleKeychain: 0c657949c7afff92337d2ff64052d5eb5c53823e
+  SimpleKeychain: 929c432dfd73afdc2ffcc982eca70bb4f2f2d700
 
-PODFILE CHECKSUM: cc50394df86605c23e1c504add0700826087a647
+PODFILE CHECKSUM: 7169bdef1f2e23b6272c1131e5849860234ca9fe
 
 COCOAPODS: 1.9.3

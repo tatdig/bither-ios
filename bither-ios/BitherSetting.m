@@ -122,7 +122,7 @@ static BOOL _isUnitTest = NO;
 
 + (NSString *)getTransactionFee:(TransactionFeeMode)transactionFee {
     CGFloat dividend = 100000;
-    NSString *unit = @"mBTC/kb";
+    NSString *unit = @"mTDC/kb";
     if (transactionFee == TenX) {
         return [NSString stringWithFormat:@"%.1f%@", TenX/dividend, unit];
     } else if (transactionFee == TwentyX) {
